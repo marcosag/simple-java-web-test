@@ -1,3 +1,5 @@
+package controller;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,17 +7,18 @@
  */
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import util.SessionHandler;
 
 /**
+ * Common servlet for "static like" pages.
  *
  * @author Marcos
  */
-public class SignoutServlet extends HttpServlet {
+public class StaticServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -27,9 +30,19 @@ public class SignoutServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {        
-        request.logout();
-        response.sendRedirect("");
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            
+            request.setAttribute("page_title", request.getServletPath());
+            request.setAttribute("user_name", request.getRemoteUser());
+            
+            /**
+             * It's loaded a common jsp file for all the urls but could be loaded
+             * a different jsp file for each one using the servlet-path value
+             */
+            request.getRequestDispatcher("static_page.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

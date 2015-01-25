@@ -3,9 +3,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Unauthorized action</title>
     </head>
     <body>
-        <h1>Sign-in failed</h1>
+        <h1>You are not allowed to see this page.</h1>
+        
     </body>
 </html>

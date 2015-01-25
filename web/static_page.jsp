@@ -1,19 +1,19 @@
-<%-- 
-    Document   : static_page
-    Created on : Jan 25, 2015, 1:51:20 PM
-    Author     : Marcos
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Simple Java Web Test</title>
     </head>
     <body>
-        <h1>Hello ${user_name}</h1>
+        <h1>Hello ${user_name} <form action="signout">
+            <button href="signout">Sign out</button>
+        </form></h1>
         <h2>You're viewing ${page_title.replace("/", "").replace("-", " ").toUpperCase()}</h2>
-        <a href="signout">Sign out</a>
+        <div>
+            <a href="page-one">Page 1</a> |
+            <a href="page-two">Page 2</a> |
+            <a href="page-three">Page 3</a>
+        </div>
     </body>
 </html>

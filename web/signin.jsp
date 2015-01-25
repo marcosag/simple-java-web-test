@@ -1,9 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : Jan 25, 2015, 3:44:18 PM
-    Author     : Marcos
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
