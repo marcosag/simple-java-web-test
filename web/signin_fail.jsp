@@ -1,6 +1,6 @@
 <%-- 
-    Document   : static_page
-    Created on : Jan 25, 2015, 1:51:20 PM
+    Document   : signin_fail
+    Created on : Jan 25, 2015, 5:17:07 PM
     Author     : Marcos
 --%>
 
@@ -12,8 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello ${user_name}</h1>
-        <h2>You're viewing ${page_title.replace("/", "").replace("-", " ").toUpperCase()}</h2>
-        <a href="signout">Sign out</a>
+        <h1>Sign-in failed</h1>
     </body>
 </html>

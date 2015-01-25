@@ -5,17 +5,17 @@
  */
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import util.SessionHandler;
 
 /**
  *
  * @author Marcos
  */
-public class StaticServlet extends HttpServlet {
+public class SignoutServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -27,13 +27,9 @@ public class StaticServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            request.setAttribute("page_title", request.getServletPath());
-            request.setAttribute("user_name", request.getRemoteUser());
-            request.getRequestDispatcher("static_page.jsp").forward(request, response);
-        }
+            throws ServletException, IOException {        
+        request.logout();
+        response.sendRedirect("");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

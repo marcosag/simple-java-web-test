@@ -4,15 +4,79 @@
         <servlet-name>StaticServlet</servlet-name>
         <servlet-class>StaticServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SignoutServlet</servlet-name>
+        <servlet-class>SignoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>StaticServlet</servlet-name>
         <url-pattern>/page-one</url-pattern>
         <url-pattern>/page-two</url-pattern>
         <url-pattern>/page-three</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignoutServlet</servlet-name>
+        <url-pattern>/signout</url-pattern>
+    </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>5</session-timeout>
     </session-config>
+    <security-constraint>
+        <display-name>SEE_PAGE_1</display-name>
+        <web-resource-collection>
+            <web-resource-name>PageOne</web-resource-name>
+            <description/>
+            <url-pattern>/page-one</url-pattern>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>PAGE_1</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>SEE_PAGE_2</display-name>
+        <web-resource-collection>
+            <web-resource-name>PageTwo</web-resource-name>
+            <description/>
+            <url-pattern>/page-two</url-pattern>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>PAGE_2</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>SEE_PAGE_3</display-name>
+        <web-resource-collection>
+            <web-resource-name>PageThree</web-resource-name>
+            <description/>
+            <url-pattern>/page-three</url-pattern>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>PAGE_3</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/signin.jsp</form-login-page>
+            <form-error-page>/signin_fail.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    <security-role>
+        <description>Allows to see "page one"</description>
+        <role-name>PAGE_1</role-name>
+    </security-role>
+    <security-role>
+        <description>Allows to see "page two"</description>
+        <role-name>PAGE_2</role-name>
+    </security-role>
+    <security-role>
+        <description>Allows to see "page three"</description>
+        <role-name>PAGE_3</role-name>
+    </security-role>
 </web-app>
