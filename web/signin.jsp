@@ -10,11 +10,11 @@
         <form action="j_security_check" method="post">
             <div>
                 <label for="user_username">Username</label>
-                <input type="text" name="j_username">
+                <input type="text" name="j_username" id="user_username">
             </div>
             <div>
                 <label for="user_password">Password</label>
-                <input type="password" name="j_password">
+                <input type="password" name="j_password" id="user_password">
             </div>
             <input type="submit" value="Sign in">
         </form>

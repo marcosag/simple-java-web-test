@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Finalizes the user session and redirects to the index page.
  * 
- * @author Marcos
+ * @author Marcos ALguacil
  */
 public class SignoutServlet extends HttpServlet {
 
@@ -29,7 +29,6 @@ public class SignoutServlet extends HttpServlet {
         response.sendRedirect("");
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -66,6 +65,5 @@ public class SignoutServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }
